@@ -6,6 +6,9 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+$primary-color : #7ed56f;
+$secondary-color : #28b485;
+$black-color :  #000;
 
 *, ::after, ::before {
     margin: 0px;
@@ -27,7 +30,7 @@ body {
 }
 .header {
     height: 90vh;
-    background-image: linear-gradient(to right bottom, rgba(162, 213, 103, 0.801), hsla(160, 64%, 43%, 0.801)),
+    background-image: linear-gradient(to right bottom, rgba($primary-color, 0.801), rgba($secondary-color, 0.801)),
         url('../img/hero.jpg');
     background-size: cover;
     background-position: top;
@@ -77,22 +80,23 @@ padding: .5rem 2rem;
 border-radius: 10rem;
 display: inline-block;
 position: relative;
-}
-.btn--white {
-background-color: #fff;
-}
-.btn:link,
-.btn:visited {
+
+&:link,
+&:visited {
     transform: translateY(-1px);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
-    transition: all .2s;    
+    box-shadow: 0 10px 10px rgba($black-color,0.2);
+    transition: all .2s;
 }
-.btn:hover {
+&:hover {
     transform: translateY(-3px);
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba($black-color,0.2);
 }
-.btn::after {
+&:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+&::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -104,12 +108,12 @@ background-color: #fff;
     z-index: -1;
     transition: all .4s;
 }
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
 }
-.btn--white::after {
-    background-color: #fff; 
+.btn--white {
+background-color: #fff;
+&::after {
+    background-color: #fff;
+}
 }
 .btn--animated {
     animation: moveInBottom 1s ease-out 0.2s
