@@ -6,9 +6,10 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-$primary-color : #7ed56f;
-$secondary-color : #28b485;
-$black-color :  #000;
+$color-primary : #7ed56f;
+$color-secondary : #28b485;
+$color-black :  #000;
+$color-dark-grey : #777;
 
 *, ::after, ::before {
     margin: 0px;
@@ -25,54 +26,57 @@ body {
     font-family: 'Lato' sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: #777;        
+    color: $color-dark-grey;        
     box-sizing: border-box;
 }
 .header {
     height: 90vh;
-    background-image: linear-gradient(to right bottom, rgba($primary-color, 0.801), rgba($secondary-color, 0.801)),
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.801), rgba($color-secondary, 0.801)),
         url('../img/hero.jpg');
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     position: relative;
+    &__logo-box {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    &__logo {
+        height: 4rem;
+    }
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
 }
-.header__logo-box {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-}
-.header__logo {
-    height: 4rem;
-}
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
+
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
-    margin-bottom: 2rem;  
-}
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out
+    margin-bottom: 2rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft 1s ease-out
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.5rem;
+        animation: moveInRight 1s ease-out
+    }
 }
 
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.5rem;
-    animation: moveInRight 1s ease-out
-}
 .btn {
 text-decoration: none;
 text-transform: uppercase;
@@ -84,13 +88,13 @@ position: relative;
 &:link,
 &:visited {
     transform: translateY(-1px);
-    box-shadow: 0 10px 10px rgba($black-color,0.2);
+    box-shadow: 0 10px 10px rgba($color-black,0.2);
     transition: all .2s;
 }
 &:hover {
     transform: translateY(-3px);
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba($black-color,0.2);
+    box-shadow: 0 10px 20px rgba($color-black,0.2);
 }
 &:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
