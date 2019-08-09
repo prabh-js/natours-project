@@ -35,11 +35,19 @@
     }
     }
     .btn--white {
-    background-color: #fff;
+    background-color: $color-white;
+    color: $color-grey-dark;
     &::after {
-        background-color: #fff;
+        background-color: $color-white;
     }
     }
+    .btn--green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+        }
+        }
     .btn--animated {
         animation: moveInBottom 1s ease-out 0.2s
     }
