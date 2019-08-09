@@ -1,0 +1,28 @@
+.story {
+    width: 80%;
+    background-color: $color-white;
+    margin: 0 auto;
+    box-shadow: 1rem 2rem 6rem rgba($color-black, .2);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        clip-path: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        float: left;
+        // background-color: orangered;
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+    }
+    &__img {
+        height: 100%;
+    }
+    &__text {
+         transform: skewX(12deg);
+    }
+}
