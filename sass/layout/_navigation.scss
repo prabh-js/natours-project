@@ -91,7 +91,7 @@
             display: inline-block;
         }
         &::before,
-        &:after {
+        &::after {
             content: "";
             position: absolute;
             left: 0;
