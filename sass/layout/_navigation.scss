@@ -22,7 +22,7 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient($color-primary-light, $color-primary-dark);   
+        background-image: radial-gradient($color-primary, $color-primary-light);   
         z-index: 1000;
         transition: all .5s;
     }

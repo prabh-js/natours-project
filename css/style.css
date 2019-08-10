@@ -539,7 +539,7 @@ body {
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  background-image: radial-gradient(#55c57a, #28b485);
+  background-image: radial-gradient(#7ed56f, #55c57a);
   z-index: 1000;
   transition: all .5s; }
 
