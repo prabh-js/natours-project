@@ -284,6 +284,7 @@ body {
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 3px; }
     .card__side--front {
       background-color: #fff;
@@ -545,6 +546,11 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all .3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.1); } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -636,7 +642,7 @@ body {
 
 .header {
   height: 90vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(85, 197, 122, 0.801)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(85, 197, 122, 0.801)), url("../img/hero-small.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -646,6 +652,9 @@ body {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(85, 197, 122, 0.801)), url("../img/hero.jpg"); } }
   .header__logo-box {
     position: absolute;
     top: 2rem;
